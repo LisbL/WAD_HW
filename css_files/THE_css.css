@@ -1,16 +1,22 @@
+:root {
+    --header-h: 56px;
+}
+
 header {
-    height: auto;
+    height: var(--header-h);
     padding: .5em;
     border: 1px solid #4f237f;
     background-color: aquamarine;
     position: fixed; /* makes it fixed to the screen*/
     top: 0;  /* sticks to the top */
     width: 100%; /* full size */
+    text-align: center;
 }
 
 body {
     margin: 0;
-    padding-top: .10em;
+    padding-top: var(--header-h);
+    box-sizing: border-box;
 }
 
 a {
@@ -19,5 +25,9 @@ a {
 }
 
 section {
-    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(206, 150, 255);
+    border-radius: 25px;
 }
