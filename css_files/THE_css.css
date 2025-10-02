@@ -4,13 +4,19 @@
 
 header {
     height: var(--header-h);
-    padding: .5em;
-    border: 1px solid #4f237f;
+    padding: 20px;
+    border: 2px solid #4f237f;
+    border-radius: 20px;
     background-color: aquamarine;
     position: fixed; /* makes it fixed to the screen*/
     top: 0;  /* sticks to the top */
     width: 100%; /* full size */
+    margin: 0;
     text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 body {
@@ -20,14 +26,31 @@ body {
 }
 
 a {
+    font-size: 25px;
     color:black;
     text-decoration: none;
 }
-
+section * {
+    margin-top: 5px; /*removing default margins*/
+    margin-bottom: 5px;
+}
 section {
-    display: flex;
+    display: inline-flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(206, 150, 255);
     border-radius: 25px;
+    padding: 20px; /*Inner breathging space*/
+    margin: 20px auto; /*Center horizontally*/
+    width: fit-content; /*as wide as needed*/
+    height: auto;
+
+}
+/*changes*/
+main {
+    height: calc(100vh - var(--header-h)); /*Everything below header*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
