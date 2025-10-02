@@ -2,27 +2,36 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css_files/THE_css.css">
+        <link rel="icon" href="images/fihh.png">
         <title>Log in</title>
     </head>
     <body>
         <header>
             <a href="index.html">Home</a>
-            <div class="kast">
-                <h3>Welcome to PostIt</h3>
-                <br>
-                <p>Create an account</p>
-                <p>or</p>
-                <form action="index.html" method="get">
-                    <label for="email">Please log in</label>
-                    <br>
-                    <input type="text" id="email" name="email" placeholder="Email" required>
-                    <br>
-                    <input type="password" id="password" name="password" placeholder="Password" required>
-                    <br>
-                    <input type="submit" value="Log in">
-                </form>
-            </div>
+            <a class="logo" href="#"><img src="images/fihh.png" width="50" height="50" alt="My picture"></a>
         </header>
+        <main>
+            <section>
+                <div class="kast">
+                    <h3 id="Welcome-title">Welcome to PostIt</h3>
+                    <p class="highlight-text">Create an account</p>
+                    <p>or</p>
+                    <form action="index.html" method="get">
+                        <label for="login">Please log in</label>
+                        <br>
+                        <input type="text" id="email" name="email" placeholder="Email" required>
+                        <br>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <br>
+                        <div class="submit">
+                            <input type="submit" value="Log in">
+                        </div>
+                    </form>
+                    <p class="highlight-text">Forgot password</p>
+                </div>
+            </section>
+        </main>
         
     </body>
 </html>
