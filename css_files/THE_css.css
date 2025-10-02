@@ -74,6 +74,27 @@ input[type="submit"]:hover {
     background-color: lightpink;
 }
 
+label[for="login"] {
+    font-weight: bold;
+    color:#4f237f
+}
+
 .highlight-text {
     color:aquamarine;
+}
+
+.highlight-text + p {
+    color: darkmagenta;
+}
+
+#welcome-title {
+    color: darkcyan;
+}
+
+.kast > p { /*Affects only the p's that are inside kast*/
+    font-weight: bold;
+}
+
+form ~ p { /*Target stuff that comes after the form*/
+    text-decoration: underline;
 }
