@@ -7,9 +7,11 @@ header {
     padding: 30px 20px;
     padding-left: 10px;
     padding-right: 10px;
+
     border: 2px solid #4f237f;
     border-radius: 20px;
     background-color: aquamarine;
+
     position: fixed; /* makes it fixed to the screen*/
     top: 2px;  /* sticks to the top */
     width: 100% ; /* full size */
@@ -21,6 +23,13 @@ header {
     box-sizing: border-box;
 }
 
+.logo{
+    /*padding-top: 5px;*/
+    display: flex;
+  align-items: center;   /* vertically center the <img> inside the anchor */
+  justify-content: center;
+  margin: 0;
+}
 
 
 
