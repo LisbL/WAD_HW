@@ -4,13 +4,13 @@
 
 header {
     height: var(--header-h);
-    padding: 20px;
+    padding: 30px;
     border: 2px solid #4f237f;
     border-radius: 20px;
     background-color: aquamarine;
     position: fixed; /* makes it fixed to the screen*/
-    top: 0;  /* sticks to the top */
-    width: 100%; /* full size */
+    top: 2px;  /* sticks to the top */
+    width: calc(100% - 50px); /* full size */
     margin: 0;
     text-align: center;
     display: flex;
@@ -20,9 +20,12 @@ header {
 }
 
 body {
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding-top: var(--header-h);
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 a {
@@ -47,10 +50,30 @@ section {
     height: auto;
 
 }
-/*changes*/
+
+.kast {
+    text-align: center;
+}
+
 main {
     height: calc(100vh - var(--header-h)); /*Everything below header*/
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+}
+
+input[type="submit"] {
+    background-color: aquamarine;
+    border: none;
+    cursor:pointer;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: lightpink;
+}
+
+.highlight-text {
+    color:aquamarine;
 }
