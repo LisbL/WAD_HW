@@ -13,6 +13,11 @@
     line-height: 1.6;
     margin: 0;
     margin-top: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: var(--header-h);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
      }
 
 
@@ -32,13 +37,28 @@ section {
     border: 1px solid #646174;
     background-color: aquamarine;
     box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
-
     position: fixed;
     width: 100%;
     top: 0;
 
+/*Lisbethi muudatused*/
     height: var(--header-h);
     text-align: center;
+
+    
+    padding: 30px;
+    border: 2px solid #4f237f;
+    border-radius: 20px;
+    background-color: aquamarine;
+    position: fixed; /* makes it fixed to the screen*/
+    top: 2px;  /* sticks to the top */
+    width: calc(100% - 50px); /* full size */
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
 
     /* 
     -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
