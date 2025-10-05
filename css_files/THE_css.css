@@ -2,8 +2,6 @@
     --header-h: 56px;
 }
 
-
-
 header {
     height: var(--header-h);
     padding: 30px 20px;
