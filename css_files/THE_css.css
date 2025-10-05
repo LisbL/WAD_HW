@@ -127,39 +127,7 @@ form ~ p { /*Target stuff that comes after the form*/
 }
 
 
-/*AddPost kast*/
-
-/*.form-row {
-  display: flex;
-  align-items: flex-start; /* keeps label top-aligned with textarea */
- /* gap: 10px; /* space between label and textarea */
-  /*margin-bottom: 15px;
-}
-
-.form-row label {
-  width: 120px;         /* fixed width for the label on the left */
-  /*font-weight: bold;
-  text-align: right;    /* align label text to the right side */
-/*}*/
-
-/*.form-row textarea {
-  flex: 1;          /* textarea expands to fill remaining space */
-  /*max-height: 60vw;/* minimal vertical size is 33% of screen size*/
-  /*min-height: 20vw; 
-  max-width: 45vw; /*45vw*/
-  /*min-width: 30vw; /* minimal horizontal size */
-  
- /* padding: 8px;
-  resize: both;     /* allow vertical resize only */
-/*}*/
-
-/*.kastAddPost{
-     max-height: 60vw;/* minimal vertical size is 33% of screen size*/
-  /*min-height: 80vw; 
-  max-width: 45vw; /*45vw*/
- /* min-width: 30vw; /* minimal horizontal size */
-  
-/*}*/
+/*---AddPost kast---*/
 
 .kastAddPost {
   display: flex;
