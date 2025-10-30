@@ -38,9 +38,8 @@
 
             function displayPosts(posts) {
                 var i;
-                var t = "";
                 for(i = 0; i < posts.length; i++) {
-                    t = t.concat('<div class="post">\n\
+                    var t = '<div class="post">\n\
                         <div class="post-header">\n\
                         <img class="profile-pic" src="' + posts[i].profilePic + '" alt="Profile picture">\n\
                         <span class="post-date">' + posts[i].date + '</span>\n\
@@ -52,9 +51,9 @@
                         <div class="post-footer">\n\
                         <span class="likes">' + posts[i].likes + '</span>\n\
                         </div>\n\
-                        </div>\n');
+                        </div>\n';
+                    document.getElementById("feed").insertAdjacentHTML('beforeend', t);
                 }
-                document.getElementById("feed").innerHTML = t;
             }
         </script>
 
