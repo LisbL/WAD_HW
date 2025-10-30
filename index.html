@@ -22,95 +22,41 @@
         </header>
 
         <!---Posts-->
-        <main class="feed">
-        <div class="post">
-            <div class="post-header">
-                <img class="profile-pic" src="images/prof3.jpg" alt="Profile picture">
-            <span class="post-date">Oct 2, 2025</span>
-        </div>
+        <main class ="feed" id="feed"></main>
+        <script>
+            let req = new XMLHttpRequest();
 
-        <div class="post-content">
-            <img src="images/marginleft.jpg" alt="Sample image">
-            <p>Guys, I think my airconditioner is broken.</p>
-        </div>
+            req.onreadystatechange = () => {
+                if (req.readyState == XMLHttpRequest.DONE) {
+                    displayPosts(JSON.parse(req.responseText).record);
+                }
+            };
 
-        <div class="post-footer">
-            <span class="likes">❤️ 12 likes</span>
-        </div>
-    </div>
+            req.open("GET", "https://api.jsonbin.io/v3/b/69037131d0ea881f40c744d9/latest", true);
+            req.setRequestHeader("X-Master-Key", "$2a$10$KffUlUzBpxLkdUPDqx9NNeU2wXxlZJxlPLsQfVZ9J9fu9Zyx7fQhm");
+            req.send();
 
-    <!--post end-->
-
-        <div class="post">
-        <div class="post-header">
-            <img class="profile-pic" src="images/prof4.jpg" alt="Profile picture">
-            <span class="post-date">Oct 2, 2025</span>
-        </div>
-
-        <div class="post-content">
-            <p>Maybe I can help? I'll take my PC with me.</p>
-        </div>
-
-        <div class="post-footer">
-            <span class="likes">❤️ 1 likes</span>
-        </div>
-    </div>
-
-    <!--post end-->
-
-        <div class="post">
-            <div class="post-header">
-                <img class="profile-pic" src="images/prof1.jpg" alt="Profile picture">
-            <span class="post-date">Oct 3, 2025</span>
-        </div>
-
-        <div class="post-content">
-            <img src="images/meme.jpg" alt="HTML meme">
-             <p>CSS in a nutshell, for real</p>
-        </div>
-
-        <div class="post-footer">
-            <span class="likes">❤️ 1 likes</span>
-        </div>
-    </div>
-
-    <!--post end-->
-
-        <div class="post">
-            <div class="post-header">
-                <img class="profile-pic" src="images/prof2.jpg" alt="Profile picture">
-            <span class="post-date">Oct 3, 2025</span>
-        </div>
-
-        <div class="post-content">
-            <p>Hahahahah, that's so good!</p>
-        </div>
-
-        <div class="post-footer">
-            <span class="likes">❤️ 0 likes</span>
-        </div>
-    </div>
-
-        <!--post end-->
-
-        
-        <div class="post">
-            <div class="post-header">
-                <img class="profile-pic" src="images/prof1.jpg" alt="Profile picture">
-            <span class="post-date">Oct 3, 2025</span>
-        </div>
-
-        <div class="post-content">
-            <p>Wait, I'll post another!</p>
-        </div>
-
-        <div class="post-footer">
-            <span class="likes">❤️ 2 likes</span>
-        </div>
-    </div>
-
-        <!-- Repeat posts as needed -->
-    </main>
+            function displayPosts(posts) {
+                var i;
+                var t = "";
+                for(i = 0; i < posts.length; i++) {
+                    t = t.concat('<div class="post">\n\
+                        <div class="post-header">\n\
+                        <img class="profile-pic" src="' + posts[i].profilePic + '" alt="Profile picture">\n\
+                        <span class="post-date">' + posts[i].date + '</span>\n\
+                        </div>\n\
+                        <div class="post-content">\n\
+                        <img src="' + posts[i].memePic + '" alt="Sample image">\n\
+                        <p>' + posts[i].comment + '</p>\n\
+                        </div>\n\
+                        <div class="post-footer">\n\
+                        <span class="likes">' + posts[i].likes + '</span>\n\
+                        </div>\n\
+                        </div>\n');
+                }
+                document.getElementById("feed").innerHTML = t;
+            }
+        </script>
 
         <footer>
             <a href="#top">Scroll back up</a>
