@@ -30,7 +30,9 @@
         <!---Posts-->
         <main class ="feed" id="feed"></main>
         <script>
-            let req = new XMLHttpRequest();
+            /*Commenting out the original online fetch code*/
+            
+            /*let req = new XMLHttpRequest();
 
             req.onreadystatechange = () => {
                 if (req.readyState == XMLHttpRequest.DONE) {
@@ -40,7 +42,14 @@
 
             req.open("GET", "https://api.jsonbin.io/v3/b/69037131d0ea881f40c744d9/latest", true);
             req.setRequestHeader("X-Master-Key", "$2a$10$KffUlUzBpxLkdUPDqx9NNeU2wXxlZJxlPLsQfVZ9J9fu9Zyx7fQhm");
-            req.send();
+            req.send();*/
+
+            fetch('css_files/res/script.json') 
+    .then(response => response.json())
+    .then(posts => {
+        displayPosts(posts); 
+    })
+    .catch(error => console.error("Error loading local JSON:", error));
 
             function displayPosts(posts) {
                 var i;
@@ -62,6 +71,8 @@
                     // took sample image out because it made the webpage ugly
                 }
             }
+
+            
 
             // Icon dropdown menu
 const profilePhoto = document.getElementById("profile-photo");
