@@ -45,7 +45,7 @@
                         <span class="post-date">' + posts[i].date + '</span>\n\
                         </div>\n\
                         <div class="post-content">\n\
-                        <img src="' + posts[i].memePic + '" alt="Sample image">\n\
+                        <img src="' + posts[i].memePic + '" alt="">\n\
                         <p>' + posts[i].comment + '</p>\n\
                         </div>\n\
                         <div class="post-footer">\n\
@@ -53,6 +53,7 @@
                         </div>\n\
                         </div>\n';
                     document.getElementById("feed").insertAdjacentHTML('beforeend', t);
+                    // took sample image out because it made the webpage ugly
                 }
             }
         </script>
