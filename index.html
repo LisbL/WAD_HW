@@ -18,7 +18,13 @@
         <a href="addPost.html">addPost</a>
 
         </div>
-        <a class="logo" href="#"><img src="images/fihh.png" width="50" height="50" alt="My picture"></a>
+        <a class="logo" href="#"><img id="profile-photo" src="images/fihh.png" width="50" height="50" alt="My picture"></a>
+        <!-- Dropdown menu -->
+<div id="profile-dropdown" class="dropdown-menu">
+    <p>Fihh Fish</p>
+    <p>fihh@fish.com</p>
+    <button id="logout-btn">Logout</button>
+</div>
         </header>
 
         <!---Posts-->
@@ -56,10 +62,28 @@
                     // took sample image out because it made the webpage ugly
                 }
             }
+
+            // Icon dropdown menu
+const profilePhoto = document.getElementById("profile-photo");
+const dropdown = document.getElementById("profile-dropdown");
+
+// Toggle dropdown on click
+profilePhoto.addEventListener("click", () => {
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+});
+
+// Close dropdown if clicked outside
+document.addEventListener("click", (event) => {
+    if (!profilePhoto.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.style.display = "none";
+    }
+});
         </script>
 
         <footer>
             <a href="#top">Scroll back up</a>
+
+            
 
 
         </footer>

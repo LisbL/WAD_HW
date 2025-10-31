@@ -180,3 +180,27 @@ form ~ p { /*Target stuff that comes after the form*/
 .submit {
   text-align: center;
 }
+
+/* Hide dropdown by default */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    text-align: left;
+    top: 70px; /* adjust based on header height */
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 180px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+#logout-btn {
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
