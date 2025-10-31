@@ -59,16 +59,9 @@ document.getElementById("postForm").addEventListener("submit", function(e) {
 const profilePhoto = document.getElementById("profile-photo");
 const dropdown = document.getElementById("profile-dropdown");
 
-// Toggle dropdown on click
+// Toggle dropdown on click and exit it by clicking again
 profilePhoto.addEventListener("click", () => {
     dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-});
-
-// Close dropdown if clicked outside
-document.addEventListener("click", (event) => {
-    if (!profilePhoto.contains(event.target) && !dropdown.contains(event.target)) {
-        dropdown.style.display = "none";
-    }
 });
 
 </script>
