@@ -9,23 +9,16 @@ html, body {
 }
 
 header {
-    height: var(--header-h);
-    padding: 30px 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-
+    display: flex;
+    justify-content: space-between; /* left links on left, logo on right */
+    align-items: center;
+    padding: 10px 20px;
     border: 2px solid #4f237f;
     border-radius: 20px;
     background-color: aquamarine;
-
-    position: fixed; /* makes it fixed to the screen*/
-    top: 2px;  /* sticks to the top */
-    width: 99% ; /* full size */
-    margin: 0;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed;
+    top: 2px;
+    width: 99%;
     box-sizing: border-box;
 }
 
@@ -42,11 +35,31 @@ header {
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    margin-top: 10px;
     padding: 0;
     padding-top: var(--header-h);
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%); /*Moves the item on the X axis*/
+
+    width: 99%;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: plum;
+    border-radius: 20px;
+    border: 2px solid rgb(29, 82, 64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
 a {
@@ -195,6 +208,13 @@ form ~ p { /*Target stuff that comes after the form*/
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     border-radius: 5px;
     z-index: 1000;
+}
+
+.dropdown-menu p {
+    background-color: plum;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
 }
 
 #logout-btn {

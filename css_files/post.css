@@ -245,7 +245,7 @@ form ~ p { /*Target stuff that comes after the form*/
 
 
 footer {
-    position: fixed;
+    position: relative;
     bottom: 2px;
     left: 50%;
     transform: translateX(-50%); /*Moves the item on the X axis*/
@@ -260,6 +260,24 @@ footer {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+}
+/*---Scroll back up button---*/
+#topBtn {
+    border: none;
+    outline: none;
+    background-color: aquamarine;
+    color:#4f237f; /* Text color */
+    cursor: pointer; /* Mouse is pointy when hovering over */
+    padding: 10px;
+    border-radius: 10px; /* Rounded edges */
+    font-size: 18px; /* Font size */
+    position: fixed; /* fixed position*/
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px;
+}
+
+#topBtn:hover {
+    background-color: rgb(151, 107, 188);
 }
 
 /* Hide dropdown by default */
