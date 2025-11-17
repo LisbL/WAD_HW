@@ -17,7 +17,48 @@ const store = createStore({
                 comment:"Guys, I think my airconditioner is broken.",
                 likes: 12
             },
-            {},{},{},{},{},{},{},{},{}]
+            {   
+                id:2,
+                author: "flutter",
+                date: "2025-10-02",
+                profilePic:"images/prof4.jpg",
+                memePic: null,
+                comment:"Maybe I can help? I'll take my PC with me.",
+                likes: 1
+            },
+            {
+                id:3,
+                author: "chic",
+                date: "2025-10-03",
+                profilePic: "images/prof1.jpg",
+                memePic: "images/meme.jpg",
+                comment: "CSS in a nutshell, for real",
+                likes: 1
+            },{
+                id:4,
+                author: "shark",
+                date: "2025-10-03",
+                profilePic: "images/prof2.jpg",
+                memePic: null,
+                comment: "Hahahahah, that's so good!",
+                likes: 0
+            },{
+                id:5,
+                author: "chic",
+                date: "2025-10-03",
+                profilePic: "images/prof1.jpg",
+                memePic: null,
+                comment: "Wait, I'll post another!",
+                likes: 2
+            },{
+                id:6,
+                author: "kirby",
+                date: "2025-10-05",
+                profilePic: "images/prof3.jpg",
+                memePic: null,
+                comment: "Where's the post? Did you forget about it?",
+                likes: 5
+            },{},{},{},{}]
         }
     },
 
