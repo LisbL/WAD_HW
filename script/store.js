@@ -8,7 +8,16 @@ const store = createStore({
     //state is like a global JSON object - everyone can use it
     state () {
         return {
-            posts: [{},{},{},{},{},{},{},{},{},{}]
+            posts: [{
+                id:1,
+                author: "kirby",
+                date: "2025-10-02", 
+                profilePic: "images/prof3.jpg", 
+                memePic:"images/marginleft.jpg", 
+                comment:"Guys, I think my airconditioner is broken.",
+                likes: 12
+            },
+            {},{},{},{},{},{},{},{},{}]
         }
     },
 
