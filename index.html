@@ -44,7 +44,7 @@
             req.setRequestHeader("X-Master-Key", "$2a$10$KffUlUzBpxLkdUPDqx9NNeU2wXxlZJxlPLsQfVZ9J9fu9Zyx7fQhm");
             req.send();*/
 
-            fetch('css_files/res/script.json') 
+            fetch('json/script.json') 
     .then(response => response.json())
     .then(posts => {
         displayPosts(posts); 

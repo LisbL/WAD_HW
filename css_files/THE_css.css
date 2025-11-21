@@ -119,6 +119,11 @@ label[for="login"] {
     color:#4f237f
 }
 
+a[for="signup"] {
+    font-weight: bold;
+    color:#4f237f
+}
+
 .highlight-text {
     color:aquamarine;
 }
@@ -222,5 +227,28 @@ form ~ p { /*Target stuff that comes after the form*/
     padding: 5px;
     margin-top: 10px;
     cursor: pointer;
+}
+
+#login-link {
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#login-link:hover {
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#signup-link {
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#signup-link:hover {
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
