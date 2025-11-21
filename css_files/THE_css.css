@@ -60,6 +60,7 @@ footer {
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
+    position: fixed;
 }
 
 a {
@@ -251,4 +252,3 @@ form ~ p { /*Target stuff that comes after the form*/
 #signup-link:hover {
     text-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-

@@ -25,6 +25,8 @@ document.getElementById("signup-form").addEventListener("submit", function(event
     if (errors.length > 0) {
         event.preventDefault();
         document.getElementById("error-message").innerHTML =
-            "The password is not valid:<br><br> " + errors.join("<br> ");
+        `<div style="text-align:center;">The password is not valid:</div>
+        <br>
+        <div style="text-align:left;">${errors.join("<br>")}</div>`;
     }
 });
