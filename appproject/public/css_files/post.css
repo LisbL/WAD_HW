@@ -212,12 +212,16 @@ form ~ p { /*Target stuff that comes after the form*/
     flex-direction: column;
     align-items: stretch;
     box-sizing: border-box;
+
+    margin: 0 auto; 
+    width: 30%; 
+    height: 30%;
 }
 
 .post-content img {
-    width: 100%;        
-    height: auto; 
-    object-fit: cover;
+    width: 50%;        
+    height: 50%; 
+    object-fit: contain;
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -303,7 +307,7 @@ footer {
     cursor: pointer;
 }
 
-/*Reset likes button*/
+/*Reset likes button and likes button*/
 button {
   padding: 10px 20px;           /* Makes the button bigger */
   border-radius: 8px;           /* Rounded corners */
@@ -325,4 +329,10 @@ button:hover {
 button:active {
   transform: translateY(0);       /* Pressed effect */
   box-shadow: 0 3px 4px rgba(0,0,0,0.1);
+}
+
+/*Only reset likes button*/
+.reset-btn {
+  margin: 30px auto;
+  display: block;
 }

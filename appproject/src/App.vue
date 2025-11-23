@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <button @click="resetLikes">Reset Likes to zero</button>
+
+    <button class="reset-btn" @click="resetLikes">Reset Likes To Zero</button>
+    <div class="feed">
 
     <Post
       v-for="post in posts"
       :key="post.id"
       :post="post"
     />
+    </div>
   </div>
 </template>
 
