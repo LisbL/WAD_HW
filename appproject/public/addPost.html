@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css_files/THE_css.css">
+        <link rel="icon" href="images/fihh.png">
+        <title>Add post</title>
+    </head>
+    
+
+
+    <body>
+        <header>
+        <a href="index.html">Home</a>
+        <a class="logo" href="#"><img id="profile-photo" src="images/fihh.png" width="50" height="50" alt="My picture"></a>
+
+        <!-- Dropdown menu -->
+<div id="profile-dropdown" class="dropdown-menu">
+    <p>Fihh Fish</p>
+    <p>fihh@fish.com</p>
+    <button id="logout-btn">Logout</button>
+</div>
+        </header>
+
+        <main>
+            <section>
+                <div class="kastAddPost">
+                    <form id="postForm">
+                    <!-- This will be useful later for posting <form action="index.html" method="post" enctype="multipart/form-data"> -->
+
+                        <div class="form-row">
+                            <label for="post-body">Post body</label>
+                            <textarea id="post-body" name="post-body" placeholder="textarea" required></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="file">Select file</label>
+                                <input type="file" id="file" name="file">
+                            </div>
+
+
+                        <div class="submit">
+                            <input type="submit" value="Create post">
+                        </div>
+                    </form>
+                </div>
+
+                <!--Redirects to index.html-->
+                
+                <script>
+document.getElementById("postForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    window.location.href = "index.html";
+});
+
+// Icon dropdown menu
+const profilePhoto = document.getElementById("profile-photo");
+const dropdown = document.getElementById("profile-dropdown");
+
+// Toggle dropdown on click and exit it by clicking again
+profilePhoto.addEventListener("click", () => {
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+});
+
+</script>
+
+            </section>
+        </main>
+
+
+    </body>
+</html>
