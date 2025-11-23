@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/vuex@4/dist/vuex.global.js"></script>
+        <script type="module" src="script/main.js"></script>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css_files/post.css">
         <link rel="icon" href="images/fihh.png">
         <title>Home</title>
+
+        
     </head>
     
 
@@ -28,7 +34,13 @@
         </header>
 
         <!---Posts-->
-        <main class ="feed" id="feed"></main>
+        <!---<main class ="feed" id="feed"></main>-->
+        <main id="app">
+            <h1>Feed</h1>
+            <button @click="resetLikes">Reset Likes</button>
+            <Post v-for="post in posts" :key="post.id" :post="post" />
+        </main>
+
         <script>
             /*Commenting out the original online fetch code*/
             
