@@ -1,115 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css_files/post.css">
-        <link rel="icon" href="public/images/fihh.png">
-        <title>Home</title>
-
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script src="https://unpkg.com/vuex@4/dist/vuex.global.js"></script>
-        <script type="module" src="appproject/src/main.js"></script>
-    </head>
-    
-
-
-    <body>
-        <header id="top">
-        <div class="header-left">
-        <a href="index.html">Home</a>
-        <span class="separator">|</span>
-        <a href="addPost.html">addPost</a>
-
-        </div>
-        <a class="logo" href="#"><img id="profile-photo" src="images/fihh.png" width="50" height="50" alt="My picture"></a>
-        <!-- Dropdown menu -->
-<div id="profile-dropdown" class="dropdown-menu">
-    <p>Fihh Fish</p>
-    <p>fihh@fish.com</p>
-    <a href="login.html" id="logout-btn">Logout</a>
-</div>
-        </header>
-
-        <!---Posts-->
-        <!---<main class ="feed" id="feed"></main>-->
-        <main id="app">
-            <h1>Feed</h1>
-            <button @click="resetLikes">Reset Likes</button>
-            <Post v-for="post in posts" :key="post.id" :post="post" />
-        </main>
-
-        <script>
-            /*Commenting out the original online fetch code*/
-            
-            /*let req = new XMLHttpRequest();
-
-            req.onreadystatechange = () => {
-                if (req.readyState == XMLHttpRequest.DONE) {
-                    displayPosts(JSON.parse(req.responseText).record);
-                }
-            };
-
-            req.open("GET", "https://api.jsonbin.io/v3/b/69037131d0ea881f40c744d9/latest", true);
-            req.setRequestHeader("X-Master-Key", "$2a$10$KffUlUzBpxLkdUPDqx9NNeU2wXxlZJxlPLsQfVZ9J9fu9Zyx7fQhm");
-            req.send();*/
-
-            /*fetch('json/script.json') 
-    .then(response => response.json())
-    .then(posts => {
-        displayPosts(posts); 
-    })
-    .catch(error => console.error("Error loading local JSON:", error));
-
-            function displayPosts(posts) {
-                var i;
-                for(i = 0; i < posts.length; i++) {
-                    var t = '<div class="post">\n\
-                        <div class="post-header">\n\
-                        <img class="profile-pic" src="' + posts[i].profilePic + '" alt="Profile picture">\n\
-                        <span class="post-date">' + posts[i].date + '</span>\n\
-                        </div>\n\
-                        <div class="post-content">\n\
-                        <img src="' + posts[i].memePic + '" alt="">\n\
-                        <p>' + posts[i].comment + '</p>\n\
-                        </div>\n\
-                        <div class="post-footer">\n\
-                        <span class="likes">' + posts[i].likes + '</span>\n\
-                        </div>\n\
-                        </div>\n';
-                    document.getElementById("feed").insertAdjacentHTML('beforeend', t);
-                    // took sample image out because it made the webpage ugly
-                }
-            }*/
-
-            
-
-            // Icon dropdown menu
-const profilePhoto = document.getElementById("profile-photo");
-const dropdown = document.getElementById("profile-dropdown");
-
-// Toggle dropdown on click and exit it by clicking again
-profilePhoto.addEventListener("click", () => {
-    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-});
-        </script>
-        <script src="script/script.js"></script>
-
-        <button onclick="topFunction()" id="topBtn" title="Go to top">Scroll back up</button> 
-        <footer>
-            <p>Terms and conditinons:</p>
-            <p>Welcome to GoofAhPosts.com! Our Terms and Conditions establish
-                the rules for using our services, promoting fairness and transparency in our digital
-                community.
-                By using our platform, you agree to abide by the terms outlined in these
-                Terms and Conditions, which may include selling your soul, kids personal
-                information and so on. Your continued use implies your understanding and acceptance
-                of these conditions.
-            </p>
-            
-        </footer>
-
-
-
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y2K MySpace</title>
+  </head>
+  <body>
+    <!-- THIS IS ALL YOU NEED -->
+    <div id="app"></div>
+  </body>
 </html>
