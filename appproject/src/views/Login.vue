@@ -3,6 +3,8 @@
     <!-- HEADER -->
     <header>
       <router-link to="/">Home</router-link>
+      <router-link to="/contact">Contacts</router-link>
+
 
       <a class="logo" href="#">
         <img
@@ -22,7 +24,8 @@
 
     <!-- MAIN CONTENT -->
     <main>
-      <section>
+       <section v-if="!showContacts">
+        <!-- Login form -->
         <div class="kast">
           <h3 id="welcome-title">Welcome to PostIt</h3>
 

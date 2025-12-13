@@ -32,6 +32,8 @@
 </template>
 
 <script>
+import { useRouter } from 'vue-router'
+
 export default {
   data() {
     return {
@@ -39,18 +41,40 @@ export default {
       password: ''
     }
   },
+  setup() {
+    const router = useRouter()
+    return { router }
+  },
   methods: {
-    signup() {
-      // Later: send credentials to backend
-      console.log('Signup:', this.email, this.password);
-      alert('Signup clicked! Implement backend request here.');
+    async signup() {
+      try {
+        const res = await fetch('http://localhost:3000/signup', { // replace with your backend endpoint
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: this.email, password: this.password })
+        })
+
+        const data = await res.json()
+
+        if (res.ok) {
+          // Save JWT token
+          localStorage.setItem('token', data.token)
+          // Redirect to Home page
+          this.router.push('/home')
+        } else {
+          alert(data.message || 'Signup failed')
+        }
+      } catch (err) {
+        console.error(err)
+        alert('Error connecting to server')
+      }
     }
   }
 }
 </script>
 
 <style scoped>
-/* Add your CSS similar to login page */
+/* Keep your existing CSS */
 .kast {
   padding: 20px;
   border-radius: 15px;
