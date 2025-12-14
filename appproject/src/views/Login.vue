@@ -2,8 +2,10 @@
   <div>
     <!-- HEADER -->
     <header>
-      <router-link to="/">Home</router-link>
+      <nav>
+      <router-link to="/">Home</router-link> |
       <router-link to="/contact">Contacts</router-link>
+      </nav>
 
 
       <a class="logo" href="#">

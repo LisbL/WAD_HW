@@ -3,7 +3,7 @@
     <header>
       <nav>
         <router-link to="/">Home</router-link> |
-        <router-link to="/contact">Contacts</router-link>
+        <router-link to="/login">Back to login</router-link>
       </nav>
     </header>
 
@@ -17,7 +17,11 @@
     </main>
 
     <footer>
-      <p>Terms and conditions...</p>
+      <p>Terms and conditions:</p>
+      <p>
+        Welcome to GoofAhPosts.com! Our Terms and Conditions establish the rules
+        for using our services...
+      </p>
     </footer>
   </div>
 </template>
