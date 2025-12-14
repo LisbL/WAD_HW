@@ -65,7 +65,7 @@ export default {
           // Redirect to Home page
           this.router.push('/home')
         } else {
-          alert(data.message || 'Signup failed')
+          alert(data.message || 'This account already exists')
         }
       } catch (err) {
         console.error(err)

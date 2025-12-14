@@ -56,19 +56,18 @@
 
 <script>
 import Post from '../components/Post.vue'
+import { mapMutations } from 'vuex'
+
 
 export default {
   components: { Post },
   data() {
-    return {
-      showDropdown: false
-    }
-  },
-  data() {
-    return {
-      posts:[]
-    }
-  },
+  return {
+    showDropdown: false,
+    posts: []
+  }
+},
+
   mounted() {
     this.fetchPosts()
   },
@@ -86,7 +85,7 @@ export default {
     },
 
     goToPost(id) {
-      this.$router.push('/post/${id}')
+      this.$router.push(`/post/${id}`)
     },
 
     logout() {
@@ -101,7 +100,7 @@ export default {
     async deleteAll() {
       const token = localStorage.getItem('token')
 
-      await fetch('http//localhost:3000/posts', {
+      await fetch('http://localhost:3000/posts', {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`
@@ -109,11 +108,11 @@ export default {
       })
 
       this.fetchPosts()
-    }
-    /** ...mapMutations(['resetLikes']),
+    },
+    ...mapMutations(['resetLikes']),
     toggleDropdown() {
       this.showDropdown = !this.showDropdown
-    } --> */
+    }
   }
 }
 </script>
