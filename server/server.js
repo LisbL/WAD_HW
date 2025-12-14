@@ -38,6 +38,14 @@ app.post('/login', async (req, res) => {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
 
+        const user = userQuery.rows[0];
+
+        // TODO: add password hashing comparison here
+        if (user.password !== password) {
+            return res.status(401).json({ message: "Incorrect password." });
+        }
+
+
         // User exists, send back a simple success response or a JWT
         res.json({ message: 'Login successful', user: userQuery.rows[0] });
     } catch (err) {
