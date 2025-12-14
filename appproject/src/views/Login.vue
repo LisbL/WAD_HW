@@ -26,7 +26,7 @@
 
     <!-- MAIN CONTENT -->
     <main>
-       <section v-if="!showContacts">
+       <section>
         <!-- Login form -->
         <div class="kast">
           <h3 id="welcome-title">Welcome to PostIt</h3>
