@@ -103,6 +103,48 @@ app.delete('/posts', async (req, res) => {
   }
 });
 
+// Get single post
+app.get('/posts/:id', async (req, res) => {
+  const { id } = req.params
+  try {
+    const post = await pool.query('SELECT * FROM posts WHERE id=$1', [id])
+    if (post.rows.length === 0) return res.status(404).json({ error: "Post not found" })
+    res.json(post.rows[0])
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: "Server error" })
+  }
+})
+
+// Update post
+app.put('/posts/:id', async (req, res) => {
+  const { id } = req.params
+  const { comment } = req.body
+  try {
+    const updated = await pool.query(
+      'UPDATE posts SET comment=$1 WHERE id=$2 RETURNING *',
+      [comment, id]
+    )
+    res.json(updated.rows[0])
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: "Server error" })
+  }
+})
+
+// Delete post
+app.delete('/posts/:id', async (req, res) => {
+  const { id } = req.params
+  try {
+    await pool.query('DELETE FROM posts WHERE id=$1', [id])
+    res.json({ message: "Post deleted" })
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: "Server error" })
+  }
+})
+
+
 
 app.listen(port, () => {
     console.log("Server running on port " + port);
