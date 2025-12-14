@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style scoped>
-/* Keep your existing CSS */
+
 .kast {
   padding: 20px;
   border-radius: 15px;

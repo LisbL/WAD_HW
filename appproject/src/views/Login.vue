@@ -109,6 +109,7 @@ export default {
       const data = await response.json();
 
       if (response.ok) {
+        localStorage.setItem('token', data.token);
         console.log('Login success:', data);
         // Redirect to Home page
         this.$router.push('/home');
