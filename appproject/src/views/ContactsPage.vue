@@ -3,7 +3,8 @@
     <header>
       <nav>
         <router-link to="/">Home</router-link> |
-        <router-link to="/login">Back to login</router-link>
+        <router-link to="/login">to login</router-link> |
+        <router-link to="/signup">to signup</router-link>
       </nav>
     </header>
 
@@ -11,7 +12,7 @@
       <section class="kast">
         <h2>Contact Us</h2>
         <p>Email: contact@example.com</p>
-        <p>Phone: +372 666 666 666</p>
+        <p>Phone: +372 666 666 9</p>
         <p>Address: Herne tee 7, Tartu</p>
       </section>
     </main>
