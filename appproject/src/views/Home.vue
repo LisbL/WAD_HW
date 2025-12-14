@@ -15,6 +15,7 @@
         @click="goToPost(post.id)"
       />
     </div>
+
   </div>
 </template>
 
@@ -45,7 +46,7 @@ export default {
     },
 
     goToPost(id) {
-      this.$router.push('/post/${id}')
+      this.$router.push(`/post/${id}`)
     },
 
     logout() {
@@ -60,7 +61,7 @@ export default {
     async deleteAll() {
       const token = localStorage.getItem('token')
 
-      await fetch('http//localhost:3000/posts', {
+      await fetch('http://localhost:3000/posts', {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`
