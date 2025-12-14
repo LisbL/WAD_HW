@@ -24,17 +24,28 @@ app.post('/signup', async (req, res) => {
 });
 
 
-//test route to check if it works
-app.get('/test', async (req, res) => {
+// --- login route ---
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
     try {
-        const result = await pool.query('SELECT NOW()'); // simple test query
-        res.json(result.rows);
+        // Check if user exists
+        const userQuery = await pool.query(
+            'SELECT * FROM users WHERE email = $1 AND password = $2',
+            [email, password]
+        );
+
+        if (userQuery.rows.length === 0) {
+            return res.status(401).json({ message: 'Invalid credentials' });
+        }
+
+        // User exists, send back a simple success response or a JWT
+        res.json({ message: 'Login successful', user: userQuery.rows[0] });
     } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server Error');
+        console.error(err);
+        res.status(500).json({ message: 'Server Error' });
     }
 });
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    console.log("Server running on port " + port);
 });

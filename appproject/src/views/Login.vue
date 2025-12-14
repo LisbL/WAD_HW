@@ -92,10 +92,36 @@ export default {
     toggleDropdown() {
       this.showDropdown = !this.showDropdown
     },
+
     login() {
       // later: send to backend
       console.log(this.email, this.password)
+    },
+
+    async login() {
+    try {
+      const response = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: this.email, password: this.password })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log('Login success:', data);
+        // Redirect to Home page
+        this.$router.push('/home');
+      } else {
+        alert(data.message); // e.g., Invalid credentials
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Error connecting to server');
     }
+  }
+
+
   }
 }
 </script>
