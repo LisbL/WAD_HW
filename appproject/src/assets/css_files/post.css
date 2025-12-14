@@ -287,7 +287,7 @@ footer {
 
 /* Hide dropdown by default */
 .dropdown-menu {
-    display: none;
+    /*display: none;*/
     position: absolute;
     text-align: left;
     top: 70px; /* adjust based on header height */

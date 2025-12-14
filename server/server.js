@@ -35,7 +35,7 @@ app.post('/login', async (req, res) => {
         );
 
         if (userQuery.rows.length === 0) {
-            return res.status(401).json({ message: 'Invalid credentials' });
+            return res.status(401).json({ message: 'You do not have an account. Please sign up' });
         }
 
         const user = userQuery.rows[0];
