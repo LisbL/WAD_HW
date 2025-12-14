@@ -343,4 +343,11 @@ button:active {
 .reset-btn {
   margin: 30px auto;
   display: block;
+  justify-content: center;
+}
+
+.action-buttons {
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }

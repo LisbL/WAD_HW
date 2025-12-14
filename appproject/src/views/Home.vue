@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <!-- HEADER -->
     <header id="top">
@@ -30,9 +31,15 @@
     <main class="feed">
       <h1>Feed</h1>
 
+    <div class="action-buttons">
     <button class="reset-btn" @click="resetLikes">
       Reset Likes
     </button>
+
+    <button class="delete-btn" @click="deleteAll">
+      Delete All Posts
+    </button>
+    </div>
 
     <Post
         v-for="post in posts"
