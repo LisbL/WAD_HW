@@ -40,16 +40,47 @@ export default {
       image: null
     }
   },
+  mounted() {
+    //Redirecting to login if logged out
+    const token = localStorage.getItem('token');
+    if (!token) {
+      alert('You must log in first!!');
+      this.$router.push('/login');
+    }
+  },
   methods: {
     onFileChange(event) {
       this.image = event.target.files[0]
     },
-    addPost() {
-      // Later: send comment + image to backend
-      console.log('Add Post:', this.comment, this.image);
-      alert('Post submitted! Implement backend request here.');
-      this.comment = '';
-      this.image = null;
+    async addPost() {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert('You must be logged in!!');
+        this.$router.push('/login');
+        return;
+      }
+
+      try {
+        //Simple JSON request for comment only
+        const res = await fetch('http://localhost:3000/posts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+          },
+          body: JSON.stringify({ comment: this.comment})
+        });
+
+        if (!res.ok) throw new Error('Failed to add post :(');
+
+        alert('Post added successfully!');
+        this.comment = '';
+        this.image = null;
+        this.$router.push('/home'); //Redirects to homepage
+      } catch (err) {
+        console.error(err);
+        alert('Error adding post');
+      }
     }
   }
 }
